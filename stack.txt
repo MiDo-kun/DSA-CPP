@@ -1,0 +1,22 @@
+Stack Data Structure Works in LIFO or FILO
+   
+   Different Operations 
+      1. push()
+         - add item to the stack
+      2. pop()
+         - remove item to the stack
+      3. isEmpty()
+         - check if item in the stack is empty
+      4. isFull()
+         - check if the stack is empty
+      5. peek()
+         - access the item at position i
+      6. count()
+         - same as size()
+      7. change()
+         - modify the item at position i
+      8. display()
+         - display all items in the stack
+   - Stack Overflow
+      - if the allocation or free space of stack is full in runtime
+   
