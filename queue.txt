@@ -1,0 +1,6 @@
+Queue Data Structure Works in FIFO or FILO
+   1. enqueue() - Elements are added from (Rear / Back)
+   2. dequeue() - Elements are removed from (Head / Front)
+   3. isFull() - Check if queue is isFull
+   4. isEmpty() - Check if queue is isEmpty
+   5. count() - Gets count of total items in queue

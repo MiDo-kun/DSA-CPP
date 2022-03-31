@@ -155,7 +155,7 @@ int main() {
             break;
 
          default:
-            std::cout << " Enter Proper Option Number: " << std::endl;
+            std::cout << " Enter Proper Option Number: ";
             std::cin >> option;
             break;
       }
