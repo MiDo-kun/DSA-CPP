@@ -1,27 +1,15 @@
 #include <iostream>
 
 // Queue Practical Implementation using arrays...
-// Note: Same as queue but in circular motion...
-//    # Future Self: Take note that as the rear is equal to the size of the array
-//    # there is nothing you can do about it, in the run time. Its always full until
-//    # you dequeue every element and you can't replace the dequeued elements.
-//    # That's the problem with the simple queue itself.
-//    # The Circular Queue fixed that problem by iterating to the entire queue itself...
-//    # Both enqueue and dequeue work in the same manner to accomplish the task...
-//    -
-
-class Circular_Queue {
+class Queue {
   private:
-   int front;                  // Dequeue - removing elements in the queue, in FIFO manner...
-   int rear;                   // Enqueue - pushing elements in the queue, in FIFO manner...
-   static const int size = 5;  // Array size must be alive in the runtime...
-   int arr[size];              // Queue is stored here...
-   int itemCount;              // Count the elements in the queue...
+   int front;   // Dequeue - removing elements in the queue, in FIFO manner...
+   int rear;    // Enqueue - pushing elements in the queue, in FIFO manner...
+   int arr[5];  // Queue is stored here...
 
   public:
    // Initializing the queue...
-   Circular_Queue() {
-      itemCount = 0;
+   Queue() {
       front = -1;
       rear = -1;
       for (int i = 0; i < 5; i++)
@@ -48,7 +36,7 @@ class Circular_Queue {
 
    // Check if the array is full...
    bool isFull() {
-      return ((rear + 1) % 5 == front) ? true : false;
+      return (rear == 4) ? true : false;
    }
 
    // Adding elements into the array...
@@ -57,14 +45,12 @@ class Circular_Queue {
          rear = 0;
          front = 0;
          arr[rear] = val;
-      } else if (isFull() == true) {
+      } else if (isFull() == true)
          std::cout << "\n Queue is full" << std::endl;
-         return;  // If the statement is true, then don't execute below this block...
-      } else {
-         rear = (rear + 1) % size;  // Circular Enqueueing happens here...
-         arr[rear] = val;           // Access the updated index before adding element into array...
+      else {
+         rear++;
+         arr[rear] = val;  // Access the updated index before adding element into array...
       }
-      itemCount++;
    }
 
    // Removing elements into the array...
@@ -78,19 +64,17 @@ class Circular_Queue {
          arr[front] = 0;
          rear = -1;
          front = -1;
-         itemCount--;
          return x;
       } else {  // Just keep removing queued elements in FIFO order...
          x = arr[front];
          arr[front] = 0;
-         front = (front + 1) % size;  // Keep synchronizing with the circular enqueueing...
-         itemCount--;
+         front++;
          return x;
       }
    }
 
    int count() {
-      return itemCount;  // Formula for total queues in the element...
+      return (rear - front) + 1;  // Formula for total queues in the element...
    }
 
    void display() {
@@ -101,7 +85,7 @@ class Circular_Queue {
 };
 
 int main() {
-   Circular_Queue obj;
+   Queue obj;
    int option = -1, value;
 
    obj.instruction();

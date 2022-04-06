@@ -1,9 +1,7 @@
 #include <iostream>
 #include <string>
 
-// Algorithm...
 // Stack Practical Implementation using Arrays...
-
 class Stack {
   private:
    int top;     // Keep track the elements in array...
@@ -60,7 +58,7 @@ class Stack {
       if (isEmpty()) {
          std::cout << "Stack Underflow" << std::endl;
       } else
-      std::cout << arr[pos] << std::endl;
+         std::cout << arr[pos] << std::endl;
    }
 
    // Change the elements of a particular index of the array
@@ -94,7 +92,7 @@ class Stack {
 int main() {
    Stack s1;
    int option = -1, position, value;
-   
+
    s1.instruction();
 
    while (option != 0) {
@@ -129,7 +127,7 @@ int main() {
             std::cout << " Index: ";
             std::cin >> position;
             s1.peek(position);
-     
+
             break;
 
          case 6:

@@ -1,0 +1,16 @@
+# Linked List is a Linear Data Structure,
+# The data is stored in a non-contagious location.
+# Elements are linked using pointers(not literally pointers in C++) or Nodes.
+
+Types of Linked List...
+   # Singly Linked List
+   # Doubly Linked List
+   # Circular Linked List
+
+Operations...
+   1. Traversing a linked list.
+   2. Append new node(to the end) of a list.
+   3. Prepend a new node (to the start) of list. Overwriting the head.
+   4. Inserting a new node to a specific position in the list.
+   5. Deleting a node from the list.
+   6. Updating a node in the list.

@@ -1,5 +1,6 @@
 Queue Data Structure Works in FIFO or FILO
 
+Operations...
    1. enqueue() 
       - Elements are added from (Rear / Back)
    2. dequeue() 
