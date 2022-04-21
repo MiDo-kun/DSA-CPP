@@ -163,19 +163,19 @@ class SinglyLinkedList {
    }
 };
 
-main() {
-   SinglyLinkedList s; // Creating class of SinglyLinkedList and an object named s
-   int option; // Variable is used to ask the user for the option
-   int key1, k1, data1; 
+int main() {
+   SinglyLinkedList s;  // Creating class of SinglyLinkedList and an object named s
+   int option;          // Variable is used to ask the user for the option
+   int key1, k1, data1;
 
-   s.instruction(); // Calling the instruction function in SinglyLinkedList Class 
-   while (option != 0) { // Keep repeating until the option is 0
+   s.instruction();       // Calling the instruction function in SinglyLinkedList Class
+   while (option != 0) {  // Keep repeating until the option is 0
       std::cout << "\n Enter Option: ";
-      std::cin >> option;  
-      Node* n1 = new Node(); // Highly related to heaps...
+      std::cin >> option;
+      Node* n1 = new Node();  // Highly related to heaps...
 
       switch (option) {
-         case 0: // if option is 0 then stop the program
+         case 0:  // if option is 0 then stop the program
             option = 0;
             break;
          case 1:
