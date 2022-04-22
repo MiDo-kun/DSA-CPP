@@ -23,6 +23,7 @@ class Node {
 class SinglyLinkedList {
   public:
    Node* head;
+
    SinglyLinkedList() {
       head = NULL;
    }
@@ -34,12 +35,12 @@ class SinglyLinkedList {
    // Check if node exist using key values
    Node* nodeExists(int k) {
       Node* temp = NULL;
-      Node* ptr = head;
-      while (ptr != NULL) {
-         if (ptr->key == k) {
+      Node* ptr = head; 
+      while (ptr != NULL) { // if head points to the next location
+         if (ptr->key == k) { // then keep searching for identical keys
             temp = ptr;
          }
-         ptr = ptr->next;
+         ptr = ptr->next; //  pointing to the next node
       }
       return temp;
    }
@@ -47,11 +48,11 @@ class SinglyLinkedList {
    // Append node to the list
    void appendNode(Node* n) {
       if (nodeExists(n->key) != NULL) {
-         std::cout << " Node already exist with key value: " << n->key << std::endl;
+         std::cout << " Node already exist with key value: " << n->key << '\n';
       } else {
          if (head == NULL) {
             head = n;
-            std::cout << " Node Appended" << std::endl;
+            std::cout << " Node Appended" << '\n';
          } else {
             Node* ptr = head;
             while (ptr->next != NULL) {
@@ -167,25 +168,31 @@ int main() {
    SinglyLinkedList s;  // Creating class of SinglyLinkedList and an object named s
    int option;          // Variable is used to ask the user for the option
    int key1, k1, data1;
-
+   
    s.instruction();       // Calling the instruction function in SinglyLinkedList Class
+   
    while (option != 0) {  // Keep repeating until the option is 0
+      Node* n1 = new Node();  // Highly related to heaps...
+
       std::cout << "\n Enter Option: ";
       std::cin >> option;
-      Node* n1 = new Node();  // Highly related to heaps...
 
       switch (option) {
          case 0:  // if option is 0 then stop the program
             option = 0;
             break;
+
          case 1:
             std::cout << "\n Append Node Operation...\n Enter key & data of the Node to be Appended: ";
             std::cin >> key1;
             std::cin >> data1;
+    
             n1->key = key1;
             n1->data = data1;
             s.appendNode(n1);
+    
             break;
+
          case 2:
             std::cout << "\n Prepend Node Operation...\n Enter key & data of the Node to be Prepend: ";
             std::cin >> key1;
@@ -194,6 +201,7 @@ int main() {
             n1->data = data1;
             s.prependNode(n1);
             break;
+
          case 3:
             std::cout << "\n Insert Node After Operation...\n Enter key of existing Node after which you want to Insert this New Node: ";
             std::cin >> k1;
@@ -204,24 +212,29 @@ int main() {
             n1->data = data1;
             s.insertNodeAfter(k1, n1);
             break;
+
          case 4:
             std::cout << "\n Delete Node By Key Operation -\n Enter key of the Node to be deleted: ";
             std::cin >> k1;
             s.deleteNodeByKey(k1);
             break;
+
          case 5:
             std::cout << "\n Update Node By Key Operation -\n Enter key & NEW data to be updated: ";
             std::cin >> key1;
             std::cin >> data1;
             s.updateNodeByKey(key1, data1);
             break;
+
          case 6:
             s.printList();
             break;
+
          case 7:
             system("CLS");
             s.instruction();
             break;
+
          default:
             std::cout << " Enter a proper number" << std::endl;
       }
