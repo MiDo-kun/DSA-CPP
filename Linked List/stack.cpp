@@ -15,7 +15,7 @@ class Stack {
    // Keep track of the pushed elements in the array
    // Just keep adding until all the array is full
    bool is_full() {
-      return (stacked_elements == 6) ? true : false;
+      return (stacked_elements == 5) ? true : false;
    }
 
    bool is_empty() {
