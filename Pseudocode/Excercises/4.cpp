@@ -4,8 +4,6 @@
 // Pseudocode
 // Set count to 1
 // while (1 <= 20) 
-//     
-
 
 #include <iostream>
 

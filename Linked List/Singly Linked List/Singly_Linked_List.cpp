@@ -36,7 +36,7 @@ class SinglyLinkedList {
    Node* nodeExists(int k) {
       Node* temp = NULL;
       Node* ptr = head; 
-      while (ptr != NULL) { // if head points to the next location
+      while (ptr != NULL) { // head points to the next location
          if (ptr->key == k) { // then keep searching for identical keys
             temp = ptr;
          }
