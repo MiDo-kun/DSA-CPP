@@ -1,7 +1,7 @@
 #include <iostream>
 
 int binarySearch(int arr[], int start, int end, int key) {
-   while(start <= end) {
+   while(start < end) {
       int midpoint = (start + end) / 2;
       std::cout << "\n Current Position of midpoint: " << midpoint << '\n';
 
